@@ -16,4 +16,4 @@ services:
     staticPublishPath: frontend/build
     envVars:
       - key: REACT_APP_API_URL
-        value: https://pickle-notes-backend.onrender.com
+        value: https://lovenote-backend-d2o1.onrender.com/api/v1
