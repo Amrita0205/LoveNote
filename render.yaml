@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: pickle-notes-backend
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://amrita0205kadam:QX8GQ3hQWeb5Qol7@cluster0.ecpsrdl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: thisisasceret
+
+  - type: static
+    name: pickle-notes-frontend
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://pickle-notes-backend.onrender.com
