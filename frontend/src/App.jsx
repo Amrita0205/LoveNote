@@ -15,7 +15,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={token ? <Navigate to="/notes" /> : <LoginForm />} />
                     <Route path="/login" element={token ? <Navigate to="/notes" /> : <LoginForm />} />
-                    <Route path="/notes" element={token ? <NoteBoard /> : <Navigate to="/login" />} />
+                    <Route path="/notes" element={token ? <NoteBoard /> : <Navigate to="/" />} />
                     <Route path="*" element={<div>404 - Route Not Found</div>} />
                 </Routes>
             </Router>
