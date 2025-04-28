@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import LoginForm from './components/LoginForm';
 import NoteBoard from './components/NoteBoard';
 import theme from './styles/theme';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 export default function App() {
     const { token } = useContext(AuthContext);
@@ -13,9 +13,9 @@ export default function App() {
         <ChakraProvider theme={theme}>
             <Router>
                 <Routes>
-                    <Route path="/" element={token ? <Navigate to="/notes" /> : <LoginForm />} />
-                    <Route path="/login" element={token ? <Navigate to="/notes" /> : <LoginForm />} />
-                    <Route path="/notes" element={token ? <NoteBoard /> : <Navigate to="/login" />} />
+                    <Route path="/" element={token ? <NoteBoard /> : <LoginForm />} />
+                    <Route path="/login" element={<LoginForm />} />
+                    <Route path="/notes" element={<NoteBoard />} />
                 </Routes>
             </Router>
         </ChakraProvider>

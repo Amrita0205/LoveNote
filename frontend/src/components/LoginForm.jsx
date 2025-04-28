@@ -12,7 +12,8 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -48,6 +49,7 @@ export default function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const toast = useToast();
+  const navigate = useNavigate();
 
   const login = async () => {
     try {
@@ -57,6 +59,7 @@ export default function LoginForm() {
       });
       const { token, user } = res.data;
       setToken(token);
+      localStorage.setItem('token', token);
       const userData = user || { _id: jwtDecode(token).id };
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));
@@ -77,7 +80,7 @@ export default function LoginForm() {
         duration: 3000,
         isClosable: true,
       });
-      window.location.href = '/notes';
+      navigate('/notes');
     } catch (error) {
       console.error('Login error:', error.response?.data || error.message);
       toast({
