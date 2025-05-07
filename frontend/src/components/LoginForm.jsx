@@ -226,6 +226,7 @@ export default function LoginForm() {
                             }}
                             onClick={() => navigate("/register")}
                             animation={`${pulse} 2s infinite`}
+                            isLoading={loading}
                         >
                             Join our love story 😉
                         </Text>
