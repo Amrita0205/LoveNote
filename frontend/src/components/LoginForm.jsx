@@ -214,7 +214,6 @@ export default function LoginForm() {
             Let’s Begin, My Love
             <Text as="span" ml={2} fontSize="xl" color="pink.300" animation={`${heartBeat} 1s infinite`}>🐧</Text>
           </MotionButton>
-          
           <Text color="pink.300" textAlign="center" mt={2}>
                   New here, senpai?{' '}
                         <Text
