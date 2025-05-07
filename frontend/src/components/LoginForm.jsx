@@ -42,11 +42,14 @@ export default function LoginForm() {
   const { setToken, setUser } = useContext(AuthContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);// This helps add the load state which means which we use this
+  //  until time time that login and token shit has completed and that state to show that symbol
   const toast = useToast();
   const navigate = useNavigate();
 
   const login = async () => {
     try {
+      setLoading(true);
       const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, {
         username,
         password,
@@ -89,6 +92,8 @@ export default function LoginForm() {
         duration: 3000,
         isClosable: true,
       });
+    } finally{
+      setLoading(false);
     }
   };
 
@@ -210,6 +215,8 @@ export default function LoginForm() {
             whileHover={{ scale: 1.1, boxShadow: '0 0 15px #ff1493' }}
             whileTap={{ scale: 0.9 }}
             animation={`${pulse} 1.5s infinite`}
+            isLoading={loading} // Apply loading state to button
+            loadingText="Logging in..." // Optional: Show text during loading
           >
             Let’s Begin, My Love
             <Text as="span" ml={2} fontSize="xl" color="pink.300" animation={`${heartBeat} 1s infinite`}>🐧</Text>
@@ -226,7 +233,6 @@ export default function LoginForm() {
                             }}
                             onClick={() => navigate("/register")}
                             animation={`${pulse} 2s infinite`}
-                            isLoading={loading}
                         >
                             Join our love story 😉
                         </Text>
