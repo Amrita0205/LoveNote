@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { jwtDecode } from 'jwt-decode';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link as RouterLink } from 'react-router-dom';
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -220,6 +220,12 @@ export default function LoginForm() {
             Let’s Begin, My Love
             <Text as="span" ml={2} fontSize="xl" color="pink.300" animation={`${heartBeat} 1s infinite`}>🐧</Text>
           </MotionButton>
+          <Text color="pink.300" fontSize="sm">
+            New here, senpai?{' '}
+            <Link as={RouterLink} to="/register" color="cyan.300" _hover={{ textDecoration: 'underline' }}>
+              Join our love story
+            </Link>
+          </Text>
         </VStack>
       </MotionBox>
     </MotionBox>
