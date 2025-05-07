@@ -296,6 +296,7 @@ const RegisterForm = () => {
                         whileTap={{ scale: 0.9 }}
                         animation={`${pulse} 1.5s infinite`}
                         isLoading={loading}
+                        loadingText={"Registering..."}
                     >
                         Begin Our Journey
                         <Text as="span" ml={2} fontSize="xl" color="pink.300" animation={`${heartBeat} 1s infinite`}>💝</Text>
