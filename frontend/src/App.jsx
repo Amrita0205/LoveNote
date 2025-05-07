@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import { ChakraProvider } from '@chakra-ui/react';
 import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
 import NoteBoard from './components/NoteBoard';
 import theme from './styles/theme';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';

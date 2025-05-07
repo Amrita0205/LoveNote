@@ -9,11 +9,11 @@ import {
   Text,
   useToast,
   keyframes,
-  Flex,
+  Flex
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { jwtDecode } from 'jwt-decode';
-import { useNavigate,Link as RouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -22,12 +22,6 @@ const glow = keyframes`
   0% { box-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493, 0 0 15px #ff1493; }
   50% { box-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493; }
   100% { box-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493, 0 0 15px #ff1493; }
-`;
-
-const sparkleAnimation = keyframes`
-  0% { opacity: 0; transform: scale(0) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
-  100% { opacity: 0; transform: scale(0) rotate(360deg); }
 `;
 
 const pulse = keyframes`
@@ -220,12 +214,23 @@ export default function LoginForm() {
             Let’s Begin, My Love
             <Text as="span" ml={2} fontSize="xl" color="pink.300" animation={`${heartBeat} 1s infinite`}>🐧</Text>
           </MotionButton>
-          <Text color="pink.300" fontSize="sm">
-            New here, senpai?{' '}
-            <Link as={RouterLink} to="/register" color="cyan.300" _hover={{ textDecoration: 'underline' }}>
-              Join our love story
-            </Link>
-          </Text>
+          
+          <Text color="pink.300" textAlign="center" mt={2}>
+                  New here, senpai?{' '}
+                        <Text
+                            as="span"
+                            color="cyan.300"
+                            cursor="pointer"
+                            _hover={{
+                                textDecoration: "underline",
+                                textShadow: "0 0 10px #00ffff",
+                            }}
+                            onClick={() => navigate("/register")}
+                            animation={`${pulse} 2s infinite`}
+                        >
+                            Join our love story 😉
+                        </Text>
+                    </Text>
         </VStack>
       </MotionBox>
     </MotionBox>
