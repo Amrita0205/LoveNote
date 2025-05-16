@@ -2,7 +2,7 @@ import session from 'express-session';
 import connectMongo from 'connect-mongo';
 import mongoose from 'mongoose';
 
-const MongoStore = connectMongo(session);
+const MongoStore = connectMongo.default;
 
 export const sessionMiddleware = session({
     secret: process.env.SESSION_SECRET || 'default_secret',
