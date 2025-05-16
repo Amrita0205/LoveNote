@@ -5,7 +5,7 @@ import {connectDB} from './src/config/db.js';
 import authRoutes from './src/routes/auth.js';
 import notesRoutes from './src/routes/notes.js';
 import {errorHandler} from '../backend/src/middleware/errorHandler.js';
-import { sessionMiddleware } from './src/middleware/session.js';
+// import { sessionMiddleware } from './src/middleware/session.js';
 
 dotenv.config();
 const app=express();
@@ -18,7 +18,7 @@ connectDB();
 app.use('/api/v1/auth',authRoutes);
 app.use('/api/v1/notes',notesRoutes);
 app.use(errorHandler);
-app.use(sessionMiddleware);
+// app.use(sessionMiddleware);
 
 const PORT=5000;
 app.listen(PORT,()=>{
