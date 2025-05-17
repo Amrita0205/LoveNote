@@ -5,7 +5,6 @@ import { connectDB } from './src/config/db.js';
 import authRoutes from './src/routes/auth.js';
 import notesRoutes from './src/routes/notes.js';
 import { errorHandler } from './src/middleware/errorHandler.js';
-import { sessionMiddleware } from './src/middleware/session.js'; // Uncomment this line
 
 dotenv.config();
 const app = express();
@@ -13,7 +12,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 connectDB();
-app.use(sessionMiddleware); // Add session middleware here, before routes
 
 
 app.use('/api/v1/auth', authRoutes);
