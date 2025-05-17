@@ -12,9 +12,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+connectDB();
 app.use(sessionMiddleware); // Add session middleware here, before routes
 
-connectDB();
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/notes', notesRoutes);
