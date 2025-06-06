@@ -792,7 +792,7 @@ export default function NoteBoard() {
               _focus={{ boxShadow: '0 0 5px #ff1493' }}
               rounded="lg"
             />
-            <Select
+            {/* <Select
               value={color}
               onChange={(e) => setColor(e.target.value)}
               bg="gray.800"
@@ -816,7 +816,43 @@ export default function NoteBoard() {
               <option value="#ffffcc" style={{ backgroundColor: '#ffffcc' , color: 'black'}}>
                 Star Yellow
               </option>
-            </Select>
+            </Select> */}
+            <Select
+  value={color}
+  onChange={(e) => setColor(e.target.value)}
+  bg="gray.800"
+  border="none"
+  color="white"
+  _hover={{
+    cursor: "url('/pointer3.png') 5 5, pointer", // Hover cursor for the Select itself
+  }}
+  _focus={{ boxShadow: '0 0 5px #ff1493' }}
+  rounded="lg"
+  sx={{
+    // Target the <option> elements within the Select
+    "& option": {
+      backgroundColor: "gray.800", // Match the Select background
+      color: "white", // Match the Select text color
+      "&:hover": {
+        cursor: "url('/pointer3.png') 5 5, pointer", // Attempt to set cursor on hover
+        backgroundColor: "gray.600", // Highlight option on hover
+      },
+    },
+  }}
+>
+  <option value="#ffccff" style={{ backgroundColor: '#ffccff', color: 'black' }}>
+    Neon Pink
+  </option>
+  <option value="#ccffcc" style={{ backgroundColor: '#ccffcc', color: 'black' }}>
+    Cyber Green
+  </option>
+  <option value="#ccccff" style={{ backgroundColor: '#ccccff', color: 'black' }}>
+    Electric Blue
+  </option>
+  <option value="#ffffcc" style={{ backgroundColor: '#ffffcc', color: 'black' }}>
+    Star Yellow
+  </option>
+</Select>
             <Flex gap={4}>
               <MotionButton
                 bgGradient="linear(to-r, #ff1493, #00ffff)"
