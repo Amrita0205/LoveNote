@@ -26,7 +26,12 @@ const theme = extendTheme({
       body: {
         bg: 'gray.900',
         color: 'white',
-        cursor: "url('/figmacursor5.png') 5 5, auto !important", // Added Figma-style cursor
+        cursor: "url('/figcursor2.png') 5 5, auto !important", // Added Figma-style cursor
+        'a, button, .chakra-button': {
+        '&:hover': { // Apply hover cursor globally
+          cursor: "url('/pointer3.png') 5 5, auto !important",
+        },
+      },
       },
       // '.cursor-ring': {
       //   position: 'fixed',

@@ -230,6 +230,7 @@ export default function LoginForm() {
                             _hover={{
                                 textDecoration: "underline",
                                 textShadow: "0 0 10px #00ffff",
+                                cursor: "url('/pointer3.png') 5 5, pointer", // Hover cursor
                             }}
                             onClick={() => navigate("/register")}
                             animation={`${pulse} 2s infinite`}

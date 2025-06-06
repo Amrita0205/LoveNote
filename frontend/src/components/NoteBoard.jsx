@@ -928,7 +928,7 @@ export default function NoteBoard() {
             A Sultry Message for My Senpai
             <Text as="span" ml={2} fontSize="xl" color="pink.300" animation={`${heartBeat} 1s infinite`}>💖</Text>
           </ModalHeader>
-          <ModalCloseButton color="pink.200" _hover={{ color: 'pink.300' }} />
+          <ModalCloseButton color="pink.200" _hover={{ color: 'pink.300', cursor: "url('/pointer3.png') 5 5, pointer"}} />
           <ModalBody textAlign="center" pb={6}>
             <Text fontSize="lg" fontStyle="italic" color="pink.100" textShadow="0 0 5px #ff69b4">
               {loveMessage}
