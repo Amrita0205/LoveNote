@@ -795,6 +795,9 @@ export default function NoteBoard() {
               bg="gray.800"
               border="none"
               color="white"
+              _hover={{
+                cursor: "url('/pointer3.png') 5 5, pointer", // Hover cursor
+            }}
               _focus={{ boxShadow: '0 0 5px #ff1493' }}
               rounded="lg"
             >
