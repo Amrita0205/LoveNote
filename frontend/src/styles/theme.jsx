@@ -1,5 +1,5 @@
 // theme.js
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, Input } from '@chakra-ui/react';
 
 const theme = extendTheme({
   config: {
@@ -27,7 +27,7 @@ const theme = extendTheme({
         bg: 'gray.900',
         color: 'white',
         cursor: "url('/figcursor2.png') 5 5, auto !important", // Added Figma-style cursor
-        'a, button, .chakra-button': {
+        'a, button, .chakra-button ,.clickable-text': {
         '&:hover': { // Apply hover cursor globally
           cursor: "url('/pointer3.png') 5 5, auto !important",
         },

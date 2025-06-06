@@ -785,6 +785,9 @@ export default function NoteBoard() {
               bg="gray.800"
               border="none"
               color="white"
+              _hover={{
+                cursor: "url('/beam.png') 5 5, text", // Hover cursor
+              }}
               _placeholder={{ color: 'pink.300', fontStyle: 'italic' }}
               _focus={{ boxShadow: '0 0 5px #ff1493' }}
               rounded="lg"
