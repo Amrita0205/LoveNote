@@ -6,12 +6,13 @@ import RegisterForm from './components/RegisterForm';
 import NoteBoard from './components/NoteBoard';
 import theme from './styles/theme';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-
+import CustomCursor from './CustomCursor';
 export default function App() {
     const { token } = useContext(AuthContext);
 
     return (
         <ChakraProvider theme={theme}>
+            <CustomCursor />
             <Router>
                 <Routes>
                     <Route path="/" element={token ? <Navigate to="/notes" /> : <LoginForm />} />

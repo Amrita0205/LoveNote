@@ -26,7 +26,22 @@ const theme = extendTheme({
       body: {
         bg: 'gray.900',
         color: 'white',
+        cursor: "url('/figmacursor5.png') 5 5, auto !important", // Added Figma-style cursor
       },
+      // '.cursor-ring': {
+      //   position: 'fixed',
+      //   top: 0,
+      //   left: 0,
+      //   width: '24px',
+      //   height: '24px',
+      //   border: '2px solid',
+      //   borderColor: 'neon.cyan', // Matches your theme
+      //   borderRadius: '50%',
+      //   pointerEvents: 'none',
+      //   transform: 'translate(-50%, -50%)',
+      //   transition: 'transform 0.15s ease',
+      //   zIndex: 9999,
+      // },
     },
   },
 });
